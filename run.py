@@ -11,23 +11,45 @@ questions = ("What’s the fastest land animal in the world?: ",
              "Name the East African country which lies on the Equator?: ",
              "Which country is the island of Zanzibar part of?: ")
 
-options   = (("A.The cheetah","B.Lion","C.Kangaroo","D. Hyena "),
-            ("A.One","B.Nine","C.Three","D.Five "),
-            ("A.Brazil","B.United States","C.Spain","D.Uruguay "),
-            ("A.Black","B.Purple","C.Pink","D.Grey "),
-            ("A.New York Knicks","B.Orlando Magic","C.Washington Wizards","D.Chicago Bulls "),
-            ("A.China","B.The USA","C.The UK","D.Australia "),
-            ("A.1901","B.1921","C.1931","D.1911 "),
-            ("A.Anthony Eden","B.Robert Peel","C.Bonar Law","D.Gordon Brown "),
-            ("A.Kenya","B.Ethiopia","C.Comoros","D.Uganda "),
-            ("A.Mozambique","B.Namibia","C.Tanzania","D.Botswana "))
+options   = (("A. The cheetah", "B. Lion", "C. Kangaroo", "D. Hyena "),
+            ("A. One", "B. Nine", "C.Three", "D. Five "),
+            ("A. Brazil", "B. United States", "C. Spain", "D.Uruguay "),
+            ("A. Black", "B. Purple", "C. Pink", "D. Grey "),
+            ("A. New York Knicks", "B. Orlando Magic", "C. Washington Wizards", "D. Chicago Bulls "),
+            ("A. China", "B. The USA", "C. The UK", "D. Australia "),
+            ("A. 1901", "B. 1921", "C. 1931", "D. 1911 "),
+            ("A. Anthony Eden", "B. Robert Peel", "C. Bonar Law", "D. Gordon Brown "),
+            ("A. Kenya", "B. Ethiopia", "C. Comoros", "D. Uganda "),
+            ("A. Mozambique", "B. Namibia", "C. Tanzania", "D. Botswana "))
 
-answers = ("A","C","D","B","D","B","A","B","A","C",)
+answers = ("A", "C", "D", "B", "D", "B", "A", "B", "A", "C",)
 guesses = []
 score = 0
 
 question_num = 0 
 
 for question in questions:
-    print("-----------------")
+    print("----------------------")
     print(question)
+    for option in options[question_num]:
+        print(option)
+
+
+   guess = input("Enter (A, B, C, D): ").upper()
+   guesses.append(guess)
+if  guess == answers[question_num]:
+    score += 1
+    print("CORRECT!")
+else:
+    print("INCORRECT!")
+    print(f"{answers[question_num]} is the correct answer")
+question_num += 1
+
+print("----------------------")
+print("        RESULTS       ")
+print("----------------------")
+
+print("answers: ", end="")
+for answer in answers:
+    print(answer, end=" ")
+    
